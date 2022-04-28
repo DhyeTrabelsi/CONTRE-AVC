@@ -18,19 +18,19 @@ const COLORS = {primary: '#ffffff', black: '#000'};
 const slides = [
   {
     id: '1',
-    image: require('../assests/onbording_one.png'),
+    image: require('../../../assests/onbording_one.png'),
     title: 'Vous aves des problémes',
     subtitle: 'Faiblesse, chute du visage, difficultés de parole ...',
   },
   {
     id: '2',
-    image: require('../assests/onbording_two.png'),
+    image: require('../../../assests/onbording_two.png'),
     title: 'Trouvez vous un médecine',
     subtitle: 'Contacter un neurologue qui nous suivi ...',
   },
   {
     id: '3',
-    image: require('../assests/onbording_three.png'),
+    image: require('../../../assests/onbording_three.png'),
     title: 'Utiliser CONTRE AVC',
     subtitle: 'Cette application vous permet de minimiser les dégats des AVC',
   },
@@ -111,11 +111,17 @@ const OnboardingScreen = ({navigation}) => {
           {currentSlideIndex == slides.length - 1 ? (
             <View style={{height : 50}}>
               <TouchableOpacity
-                style={styles.btn}
+                 style={[
+                  styles.btn,
+                  {
+                    borderColor: COLORS.black,
+                    borderWidth : 1,
+                    backgroundColor: 'transparent',
+marginHorizontal:90                  },
+                ]}
                 onPress={() => navigation.replace('SignInScreen')}>
                 <Text style={{fontWeight: 'bold', fontSize: 15}}>
-                  GET STARTED
-                </Text>
+                COMMENCER</Text>
               </TouchableOpacity>
             </View>
           ) : (
@@ -137,7 +143,7 @@ const OnboardingScreen = ({navigation}) => {
                     fontSize: 15,
                     color: COLORS.black,
                   }}>
-                  SKIP
+                  PASSER
                 </Text>
               </TouchableOpacity>
               <View style={{width : 15}} />
@@ -159,7 +165,7 @@ const OnboardingScreen = ({navigation}) => {
                     fontSize: 15,
                     
                   }}>
-                  NEXT
+                  SUIVANT
                 </Text>
               </TouchableOpacity>
             </View>
